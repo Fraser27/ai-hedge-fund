@@ -119,6 +119,34 @@ cp .env.example .env
 run.bat build
 ```
 
+## Supported Models
+
+The following LLM providers are supported:
+- Amazon Bedrock (Claude 3 and Claude 2.1)
+- Anthropic (Direct API)
+- DeepSeek
+- Google (Gemini)
+- Groq
+- OpenAI
+
+## Amazon Bedrock Setup
+
+To use Amazon Bedrock models, you'll need to:
+
+1. Set up AWS credentials in your environment:
+   ```bash
+   export AWS_ACCESS_KEY_ID="your_access_key"
+   export AWS_SECRET_ACCESS_KEY="your_secret_key"
+   export AWS_REGION="your_region"  # defaults to us-east-1 if not set
+   ```
+
+2. Available Bedrock Models:
+   - Claude 3 Opus: `anthropic.claude-3-opus-20240229`
+   - Claude 3 Sonnet: `anthropic.claude-3-sonnet-20240229`
+   - Claude 2.1: `anthropic.claude-v2:1`
+
+3. Make sure you have access to these models in your AWS Bedrock account and the necessary permissions for invoking them.
+
 **Important**: You must set `OPENAI_API_KEY`, `GROQ_API_KEY`, `ANTHROPIC_API_KEY`, or `DEEPSEEK_API_KEY` for the hedge fund to work.  If you want to use LLMs from all providers, you will need to set all API keys.
 
 Financial data for AAPL, GOOGL, MSFT, NVDA, and TSLA is free and does not require an API key.
